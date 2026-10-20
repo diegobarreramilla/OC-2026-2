@@ -1,9 +1,5 @@
 %include "../../lib/pc_io.inc"   
 
-extern getch
-extern putchar
-extern puts
-extern clrscr
 
 section .data
     msg_inicio db "Escribe una cadena: ", 0
@@ -96,7 +92,7 @@ captura:
     je .captura_fin
 
     ; retroceso
-    cmp byte [tecla], 8
+    cmp byte [tecla], 127
     je .captura_borrar
 
     ; No exceder el limite
